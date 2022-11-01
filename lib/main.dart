@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/home.dart';
+import 'package:quran_app/loginpage.dart';
 
 void main() {
   runApp(const MyApp());

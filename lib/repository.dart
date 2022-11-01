@@ -10,7 +10,6 @@ class Repository {
     try {
       final response = await http.get(Uri.parse(_baseUrl));
       if (response.statusCode == 200) {
-        print(response.body);
         Iterable it = (json.decode(utf8.decode(response.bodyBytes)));
         List<asmaul> text = it.map((e) => asmaul.fromJson(e)).toList();
         return text;
