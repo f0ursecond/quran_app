@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quran_app/home.dart';
 import 'package:quran_app/loginpage.dart';
+import 'package:quran_app/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +18,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: HomePage());
+        home: const splash());
   }
 }

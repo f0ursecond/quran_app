@@ -16,7 +16,7 @@ class _loginPageState extends State<loginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
+      backgroundColor: Color(0xFF863ED5),
       body: Form(
         child: SingleChildScrollView(
           child: Padding(
@@ -70,9 +70,10 @@ class _loginPageState extends State<loginPage> {
                             Text(
                               'Please enter your email & password',
                               style: GoogleFonts.hind(
-                                color: Colors.grey[600],
+                                color: Colors.white,
                                 fontSize: 15,
                                 fontWeight: FontWeight.w400,
+                                letterSpacing: 0.5,
                               ),
                             ),
                           ],

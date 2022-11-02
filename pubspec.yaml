@@ -40,6 +40,7 @@ dependencies:
   google_fonts: ^3.0.1
   lottie: ^1.4.3
   flutter_vector_icons: ^2.0.0
+  flutter_svg: ^1.1.6
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +67,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/animations/quran.json
+    - assets/images/logo.svg
+    - assets/images/logo2.png
     
    
 
