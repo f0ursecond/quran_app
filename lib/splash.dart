@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:quran_app/home.dart';
 import 'package:quran_app/loginpage.dart';
 
 class splash extends StatefulWidget {
@@ -74,7 +75,7 @@ class _splashState extends State<splash> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => const loginPage()));
+                                      builder: (context) => const HomePage()));
                             },
                             child: Text(
                               'Get Started',

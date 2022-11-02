@@ -15,6 +15,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<asmaul> text = [];
   Repository repository = Repository();
+  bool isLoading = false;
 
   getData() async {
     text = await repository.getData();
@@ -37,18 +38,18 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {},
                 icon: const Icon(
                   Icons.search,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
               ),
             )
           ],
           elevation: 0,
-          backgroundColor: Colors.lightBlueAccent,
+          backgroundColor: const Color(0xFF672CBC),
           title: Text(
             'Asmaul Husna',
             style: GoogleFonts.poppins(
-              fontSize: 15,
-              color: Colors.black,
+              fontSize: 17,
+              color: Colors.white,
               letterSpacing: 0.5,
             ),
           ),
@@ -56,57 +57,63 @@ class _HomePageState extends State<HomePage> {
         body: FutureBuilder(
             future: getData(),
             builder: (context, index) {
-              return ListView.builder(
-                  itemCount: text.length,
-                  itemBuilder: (context, index) {
-                    return Card(
-                      child: ListTile(
-                        leading: CircleAvatar(
-                          radius: 16,
-                          backgroundColor: Colors.lightBlueAccent,
-                          child: Text(
-                            '${text[index].id}',
-                            style: GoogleFonts.poppins(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.white,
+              if (index.connectionState == ConnectionState.done) {
+                return ListView.builder(
+                    itemCount: text.length,
+                    itemBuilder: (context, index) {
+                      return Card(
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            radius: 16,
+                            backgroundColor: Color(0xFF672CBC),
+                            child: Text(
+                              '${text[index].id}',
+                              style: GoogleFonts.poppins(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
-                        ),
-                        title: Transform(
-                          transform: Matrix4.translationValues(0, -5, 0),
-                          child: Text(
-                            '${text[index].latin}',
-                            style: GoogleFonts.karla(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600,
+                          title: Transform(
+                            transform: Matrix4.translationValues(0, -5, 0),
+                            child: Text(
+                              '${text[index].latin}',
+                              style: GoogleFonts.karla(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                           ),
-                        ),
-                        subtitle: Transform(
-                          transform: Matrix4.translationValues(0, -3, 0),
-                          child: Text(
-                            '${text[index].arti}',
-                            style: GoogleFonts.karla(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w500,
+                          subtitle: Transform(
+                            transform: Matrix4.translationValues(0, -3, 0),
+                            child: Text(
+                              '${text[index].arti}',
+                              style: GoogleFonts.karla(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
-                        ),
-                        trailing: Transform(
-                          transform: Matrix4.translationValues(5, -1, 0),
-                          child: Text(
-                            '${text[index].arab}',
-                            style: GoogleFonts.amiri(
-                              fontSize: 22,
-                              fontWeight: FontWeight.w500,
+                          trailing: Transform(
+                            transform: Matrix4.translationValues(5, -1, 0),
+                            child: Text(
+                              '${text[index].arab}',
+                              style: GoogleFonts.amiri(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
+                          dense: true,
                         ),
-                        dense: true,
-                      ),
-                    );
-                  });
+                      );
+                    });
+              } else {
+                return const Center(
+                  child: CircularProgressIndicator(color: Colors.black),
+                );
+              }
             }));
   }
 }
