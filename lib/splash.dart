@@ -44,19 +44,17 @@ class _splashState extends State<splash> {
                   const SizedBox(
                     height: 25,
                   ),
-                  Expanded(
-                    child: Container(
-                      height: 360,
-                      width: 250,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: const Color(0xFF672CBC),
-                      ),
-                      child: Transform(
-                        transform: Matrix4.translationValues(1, -43, 0),
-                        child: Image.asset(
-                          'assets/images/logo2.png',
-                        ),
+                  Container(
+                    height: 480,
+                    width: 270,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: const Color(0xFF672CBC),
+                    ),
+                    child: Transform(
+                      transform: Matrix4.translationValues(1, -43, 0),
+                      child: Image.asset(
+                        'assets/images/logo2.png',
                       ),
                     ),
                   ),
