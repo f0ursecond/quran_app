@@ -129,11 +129,10 @@ class _HomePageState extends State<HomePage> {
                 return Center(
                     child: LoadingAnimationWidget.fallingDot(
                         color: Colors.purple, size: 50));
-              } else if (index.connectionState == ConnectionState.none) {
-                return const Text(
-                  'Check Your Connection Again',
-                  style: TextStyle(color: Colors.black),
-                );
+              } else if (index == 'Failed host lookup') {
+                return Center(
+                    child: LoadingAnimationWidget.fallingDot(
+                        color: Colors.yellowAccent, size: 50));
               } else {
                 return const Text('Check Your Connection Again');
               }

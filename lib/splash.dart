@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quran_app/home.dart';
 import 'package:quran_app/loginpage.dart';
+import 'package:quran_app/quranpage.dart';
 
 class splash extends StatefulWidget {
   const splash({super.key});
@@ -45,8 +46,8 @@ class _splashState extends State<splash> {
                     height: 25,
                   ),
                   Container(
-                    height: 480,
-                    width: 270,
+                    height: 360,
+                    width: 250,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
                       color: const Color(0xFF672CBC),
@@ -69,20 +70,21 @@ class _splashState extends State<splash> {
                       ),
                       child: Center(
                         child: TextButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const HomePage()));
-                            },
-                            child: Text(
-                              'Get Started',
-                              style: GoogleFonts.poppins(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 14,
-                                  color: Colors.white,
-                                  letterSpacing: 0.5),
-                            )),
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const quranPage()));
+                          },
+                          child: Text(
+                            'Get Started',
+                            style: GoogleFonts.poppins(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 14,
+                                color: Colors.white,
+                                letterSpacing: 0.5),
+                          ),
+                        ),
                       ),
                     ),
                   )

@@ -3,16 +3,17 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:quran_app/model.dart';
+import 'package:quran_app/quranmodel.dart';
 
 class Repository {
-  final _baseUrl = 'https://635fada9ca0fe3c21aa1c562.mockapi.io/asmaul';
+  final _baseUrl = 'https://equran.id/api/surat';
   Future getData() async {
     try {
       final response = await http.get(Uri.parse(_baseUrl));
       if (response.statusCode == 200) {
         Iterable it = (json.decode(utf8.decode(response.bodyBytes)));
-        List<asmaul> text = it.map((e) => asmaul.fromJson(e)).toList();
-        return text;
+        List<quran> anjay = it.map((e) => quran.fromJson(e)).toList();
+        return anjay;
       }
     } catch (e) {
       print('error =  ${e.toString()}');

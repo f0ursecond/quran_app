@@ -16,7 +16,7 @@ class _loginPageState extends State<loginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF863ED5),
+      backgroundColor: const Color(0xFF863ED5),
       body: Form(
         child: SingleChildScrollView(
           child: Padding(
@@ -104,7 +104,7 @@ class _loginPageState extends State<loginPage> {
                         borderRadius: BorderRadius.circular(5.0),
                       ),
                       hintText: 'Email',
-                      prefixIcon: Icon(
+                      prefixIcon: const Icon(
                         Ionicons.mail_open_outline,
                         size: 20,
                         color: Colors.black,
