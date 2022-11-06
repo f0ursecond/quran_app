@@ -2,8 +2,8 @@ import 'dart:convert' as convert;
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:quran_app/model.dart';
-import 'package:quran_app/quranmodel.dart';
+import 'package:quran_app/model/model.dart';
+import 'package:quran_app/model/quranmodel.dart';
 
 class Repository {
   final _baseUrl = 'https://equran.id/api/surat';

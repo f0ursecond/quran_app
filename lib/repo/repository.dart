@@ -2,7 +2,7 @@ import 'dart:convert' as convert;
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:quran_app/model.dart';
+import 'package:quran_app/model/model.dart';
 
 class Repository {
   final _baseUrl = 'https://635fada9ca0fe3c21aa1c562.mockapi.io/asmaul';

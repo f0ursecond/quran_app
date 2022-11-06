@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:quran_app/home.dart';
-import 'package:quran_app/loginpage.dart';
-import 'package:quran_app/quranpage.dart';
+import 'package:quran_app/page/home.dart';
+import 'package:quran_app/page/loginpage.dart';
+import 'package:quran_app/page/quranpage.dart';
 
 class splash extends StatefulWidget {
   const splash({super.key});
@@ -70,12 +71,7 @@ class _splashState extends State<splash> {
                       ),
                       child: Center(
                         child: TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const quranPage()));
-                          },
+                          onPressed: () => context.go('/choose'),
                           child: Text(
                             'Get Started',
                             style: GoogleFonts.poppins(

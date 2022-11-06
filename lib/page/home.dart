@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
-import 'package:quran_app/model.dart';
-import 'package:quran_app/repository.dart';
+import 'package:quran_app/model/model.dart';
+import 'package:quran_app/repo/repository.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
